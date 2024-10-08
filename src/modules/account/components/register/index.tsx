@@ -12,7 +12,9 @@ import LoadingIcon from "~/modules/common/icons/loading-button";
 interface RegisterCredentials extends FieldValues {
   name: string;
   phone: string;
+  email: string;
   password: string;
+  confirm_password: string;
   role: string;
 }
 
