@@ -10,11 +10,11 @@ export enum LOGIN_VIEW {
 }
 
 interface AccountContext {
-  staff?: any;
-  retrievingStaff: boolean;
+  member?: any;
+  reterivingMember: boolean;
   loginView: [LOGIN_VIEW, React.Dispatch<React.SetStateAction<LOGIN_VIEW>>];
   checkSession: () => void;
-  refetchStaff: () => void;
+  refetchMember: () => void;
   handleLogout: () => void;
   loading: boolean;
 }
@@ -27,7 +27,7 @@ interface AccountProviderProps {
 
 export const AccoundProvider = ({children} : AccountProviderProps) => {
     const {status,data:session} = useSession();
-    const {isLoading:retrievingStaff,refetch} = useMeStaff();
+    const {isLoading:reterivingMember,refetch} = useMeStaff();
     const loginView = useState<LOGIN_VIEW>(LOGIN_VIEW.SIGN_IN);
 
     const router = useRouter();
@@ -48,10 +48,10 @@ export const AccoundProvider = ({children} : AccountProviderProps) => {
     return(
         <AccountContext.Provider
         value={{
-            staff: session?.user,
-            retrievingStaff,
+            member: session?.user,
+            reterivingMember,
             checkSession,
-            refetchStaff:refetch,
+            refetchMember:refetch,
             loading:status === "loading",
             handleLogout,
             loginView
