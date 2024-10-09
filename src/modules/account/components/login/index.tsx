@@ -25,22 +25,22 @@ const Login = () => {
     formState: { errors, isSubmitting },
   } = useForm<SignInCredentials>();
   const onSubmit = handleSubmit(async (credentials) => {
-    // const res = await signIn("credentials",{
-    //     phone: credentials.phone,
-    //     password:credentials.password,
-    //     redirect:false,
-    // });
-    // console.log(res)
-    // if (res?.status === 401) {
-    //     handleError(new Error("Invalid phone no or password"));
-    //     toast.error(authError,{
-    //         position:"top-center"
-    //     })
-    //   } else {
-    //     console.log("push to router")
-    //     router.push("/app/items/view-items");
-    //   }
-    router.push("/app/items/view-items");
+    const res = await signIn("credentials", {
+      phone: credentials.phone,
+      password: credentials.password,
+      redirect: false,
+    });
+    console.log(res);
+    if (res?.status === 401) {
+      handleError(new Error("Invalid phone no or password"));
+      toast.error(authError, {
+        position: "top-center",
+      });
+    } else {
+      console.log("push to router");
+      router.push("/app/profile");
+    }
+    // router.push("/app/profile");
   });
   return (
     <>
@@ -69,9 +69,8 @@ const Login = () => {
                 errors={errors}
               />
               <button
-                type="button"
+                type="submit"
                 disabled={isSubmitting}
-                onClick={() => router.push("/app/items/view-items")}
                 className="flex flex-row items-center justify-center rounded border-2 border-gray-500 bg-primary py-3 text-white"
               >
                 {isSubmitting ? <LoadingIcon size={20} /> : "Login"}

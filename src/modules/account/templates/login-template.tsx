@@ -5,14 +5,14 @@ import Login from "../components/login";
 import Register from "../components/register";
 
 const LoginTemplate = () => {
-    const {loginView,staff,retrievingStaff} = useAccount();
+    const {loginView,member,reterivingMember} = useAccount();
     const [currentView,_] = loginView;
     const router = useRouter();
     useEffect(() => {
-        if(!retrievingStaff && staff){
+        if(!reterivingMember && member){
             router.push("")
         }
-    },[staff,retrievingStaff,router]);
+    },[member,reterivingMember,router]);
     return(
         <div className="flex min-h-screen w-full h-full items-center justify-center">
             {currentView === "sign-in"? <Login/> : <Register/>}

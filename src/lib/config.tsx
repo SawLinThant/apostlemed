@@ -30,7 +30,7 @@ export const memberRoutes:Array<RouteConfig> = [
         label: "Account",
         withLocale: true,
         icon: <User size="20px" />,
-        path: "/app/account",
+        path: "/app/profile",
         // hideDesktop: true,
       },
       {

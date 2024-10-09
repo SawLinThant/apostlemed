@@ -66,6 +66,7 @@ model User {
     accounts      Account[]
     sessions      Session[]
     posts         Post[]
+    createdDate      DateTime @default(now())
 }
 
 model VerificationToken {
