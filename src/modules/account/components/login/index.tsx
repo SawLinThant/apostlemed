@@ -72,7 +72,7 @@ const Login = () => {
                 type="button"
                 disabled={isSubmitting}
                 onClick={() => router.push("/app/items/view-items")}
-                className="flex flex-row items-center justify-center rounded border-2 border-gray-500 bg-primary py-3 text-white"
+                className="flex flex-row items-center justify-center rounded border bg-theme py-3 text-white"
               >
                 {isSubmitting ? <LoadingIcon size={20} /> : "Login"}
               </button>
