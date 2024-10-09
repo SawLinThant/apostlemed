@@ -6,7 +6,10 @@ export default {
   theme: {
     extend: {
       colors:{
-        primary: "#7a14f4",
+        theme:"#c89116",
+        primary: "#DAA520",
+        secondary: "#ffde59",
+        texttheme:"#2c2c2c"
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
