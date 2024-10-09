@@ -1,8 +1,10 @@
 import React from "react";
+import { useAccount } from "~/lib/context/account-context";
 import Profile from "~/modules/common/icons/profile";
 import Signout from "~/modules/common/icons/sign-out";
 
 const ProfileDropdown: React.FC = () => {
+    const {handleLogout} = useAccount();
   return (
     <div className="relative min-h-12 min-w-10 group">
       <div className="flex h-full w-full items-center justify-center p-3">
@@ -22,11 +24,11 @@ const ProfileDropdown: React.FC = () => {
             </div>
           </div>
           <div className="flex w-full flex-col justify-center gap-3 rounded-md bg-gray-300 p-4">
-            <div className="flex h-full w-full flex-row items-center gap-3">
+            <div className="flex h-full cursor-pointer w-full flex-row items-center gap-3">
               <Profile color="black" />
               <div>Profile Detail</div>
             </div>
-            <div className="flex h-full w-full flex-row items-center gap-3">
+            <div onClick={handleLogout} className="flex h-full cursor-pointer w-full flex-row items-center gap-3">
               <Signout color="black" />
               <div>SignOut</div>
             </div>

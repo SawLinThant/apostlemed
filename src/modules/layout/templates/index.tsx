@@ -4,9 +4,9 @@ import Navbar from "./navbar";
 
 const Layout: LayoutWithChildren = ({ children }) => {
   return (
-    <div className="flex h-full w-full flex-row gap-2">
+    <div className="flex h-full w-full flex-row">
       <Sidebar />
-      <main className="flex h-screen max-h-screen w-full flex-col overflow-y-auto">
+      <main className="flex h-screen max-h-screen w-full flex-col overflow-y-auto overflow-x-hidden">
         <Navbar/>
         <div className="h-full w-full">{children}</div>
       </main>

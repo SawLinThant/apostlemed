@@ -9,7 +9,7 @@ const Sidebar:React.FC = () => {
     const { member: userdata } = useAccount();
     const routes = userdata?.userType === "Ops"? opsRoutes:memberRoutes;
     return(
-        <div className={clsx(" md:hidden max-h-screen h-screen border-r transition-all duration-500 hidden border-gray-600 lg:flex lg:flex-col lg:items-center p-4",{
+        <div className={clsx(" md:hidden max-h-screen h-screen border-r transition-all duration-200 hidden border-gray-600 lg:flex lg:flex-col lg:items-center p-4",{
             "lg:w-[15vw]":!collapse,
             "lg:w-[7vw]":collapse
         })}>
