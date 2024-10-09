@@ -1,4 +1,6 @@
 import { QueryClient } from "@tanstack/react-query";
+import User from "~/modules/common/icons/user";
+import Wallet from "~/modules/common/icons/wallet";
 
 const queryClient = new QueryClient({
     defaultOptions:{
@@ -11,3 +13,63 @@ const queryClient = new QueryClient({
 })
 
 export {queryClient}
+
+interface RouteConfig {
+    withLocale?: boolean;
+    id: string;
+    label: string;
+    path: string;
+    icon?: React.ReactNode;
+    routes?: Array<RouteConfig>;
+    hideDesktop?: boolean;
+}
+
+export const memberRoutes:Array<RouteConfig> = [
+    {
+        id: "account",
+        label: "Account",
+        withLocale: true,
+        icon: <User size="20px" />,
+        path: "/app/account",
+        // hideDesktop: true,
+      },
+      {
+        id: "memberbadge",
+        label: "Member Badge",
+        withLocale: true,
+        icon: <Wallet size="20px" />,
+        path: "/app/memberbadge",
+      },
+      {
+        id: "collection",
+        label: "Collection",
+        withLocale: true,
+        icon: <Wallet size="20px" />,
+        path: "/app/collection",
+      },
+]
+
+export const opsRoutes:Array<RouteConfig> = [
+    {
+        id: "account",
+        label: "Account",
+        withLocale: true,
+        icon: <User size="20px" />,
+        path: "/app/account",
+        // hideDesktop: true,
+      },
+      {
+        id: "memberbadge",
+        label: "Member Badge",
+        withLocale: true,
+        icon: <Wallet size="20px" />,
+        path: "/app/memberbadge",
+      },
+      {
+        id: "collection",
+        label: "Collection",
+        withLocale: true,
+        icon: <Wallet size="20px" />,
+        path: "/app/collection",
+      },
+]
