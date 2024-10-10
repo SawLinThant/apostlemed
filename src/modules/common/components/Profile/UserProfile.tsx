@@ -1,6 +1,9 @@
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React from "react";
+import { MdEmail } from "react-icons/md";
+import { FaEdit } from "react-icons/fa";
+import { MdOutlineIncompleteCircle } from "react-icons/md";
 import {
   Tooltip,
   TooltipContent,
@@ -12,43 +15,80 @@ import { useAccount } from "~/lib/context/account-context";
 const UserProfile = () => {
   const router = useRouter();
   const { data } = useSession();
-  console.log(data);
+
   return (
-    <div className="flex w-full flex-col items-center">
-      <div className="mt-[40px] flex w-full flex-col items-center rounded-[5px] border-[1px] px-[20px] py-[20px] shadow-lg sm:w-[500px]">
-        <div className="flex h-[100px] w-[100px] items-center justify-center rounded-full bg-blue-500">
-          <span className="text-[35px] text-white">{data?.user.name?.charAt(0)}</span>
+    <div className="flex w-full flex-col items-center rounded-t">
+      <div className="flex w-full flex-col items-center rounded-t">
+        <div className="relative h-[8rem] w-full rounded-t-md border-b bg-gray-800">
+          <div className="absolute bottom-[-1px] right-[1.5rem] lg:right-[5.5rem] z-0 h-[60px] w-[120px] translate-y-[3.7rem] rotate-[-180deg] transform rounded-t-full border-l border-r border-t border-gray-800 bg-gray-700"></div>
         </div>
-        <div className="flex w-full flex-col items-center justify-center">
-          <span className="text-[20px] font-semibold">{data?.user.name}</span>
-          <span className="text-[12px] font-semibold text-gray-400">
-            Member since 24th October 2024
-          </span>
-        </div>
-        <div className="mt-[50px] flex w-full rounded-[5px] border-[1px] bg-[#fbf9f6] shadow-sm sm:w-full">
-          <div className="grid w-full grid-cols-2 grid-rows-2 p-[20px]  flex-wrap">
-            <div>Email</div>
-            <div className=" line-clamp-1">
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger>{data?.user?.email}</TooltipTrigger>
-                  <TooltipContent>
-                    <p>{data?.user?.email}</p>
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
+        <div className="flex w-full flex-row items-center lg:justify-end justify-between">
+          <div className="lg:mr-8 mt-2 flex h-full lg:flex-row flex-col ml-4 items-start gap-1 lg:gap-4">
+            <div className="flex flex-row items-center gap-2">
+              <p className="text-lg font-bold">1.2k</p>
+              <span className="text-gray-500">Followers</span>
             </div>
-            <div>Phone</div>
-            <div>{data?.user?.phone}</div>
+            <div className="flex flex-row items-center gap-2">
+              <p className="text-lg font-bold">3k</p>
+              <span className="text-gray-500">Followings</span>
+            </div>
+          </div>
+          <div className="z-10 mr-[2.1rem] lg:mr-[6.1rem] flex h-[100px] w-[100px] translate-y-[-3.2rem] flex-col items-center justify-center rounded-full bg-theme">
+            <span className="text-[35px] text-white">
+              {data?.user.name?.charAt(0)}
+            </span>
           </div>
         </div>
-        <div className="mt-[30px]">
-          <button
-            className="rounded-[5px] border-[1px] bg-blue-700 p-[10px] text-white"
-            onClick={() => router.push("/app/profile/additional-data")}
-          >
-            Edit Additional Data
-          </button>
+        <div className="flex w-full flex-col gap-4 md:px[4rem] px-2 lg:px-[5rem]">
+          <h2 className="w-full translate-y-[-1.5rem] text-right text-xl font-extrabold">
+            {data?.user.name}
+          </h2>
+          <p className="text-gray-600">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla neque
+            veniam minus? Quos fugiat voluptate alias, expedita, veritatis, sunt
+            corrupti distinctio cum reprehenderit officia molestiae beatae. Odio
+            earum ut itaque.
+          </p>
+          <div className="flex w-full flex-row items-center justify-start gap-4">
+            <div className="flex flex-row items-center gap-1 cursor-pointer hover:underline text-blue-500">
+              <FaEdit />
+              <div>Edit Your Profile</div>
+            </div>
+            <div
+             onClick={() => router.push("/app/profile/additional-data")}
+            className="flex flex-row items-center gap-1 text-blue-500 cursor-pointer hover:underline">
+              <MdOutlineIncompleteCircle />
+              <div>Complete Your Profile</div>
+            </div>
+          </div>
+          <div className="grid w-full rounded-xl bg-gray-200 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
+            <div className="flex w-full flex-col gap-8 lg:border-r border-gray-800 p-3">
+              <div className="flex flex-row items-center gap-2">
+                <MdEmail size={20} />
+                <div>{data?.user.email}</div>
+              </div>
+              <div className="flex flex-row items-center gap-2">
+                <MdEmail size={20} />
+                <div>{data?.user.email}</div>
+              </div>
+              <div className="flex flex-row items-center gap-2">
+                <MdEmail size={20} />
+                <div>{data?.user.email}</div>
+              </div>
+            </div>
+            <div className="flex w-full flex-col border-gray-800 lg:border-r p-3">
+              <div className="flex flex-row items-center gap-2">
+                <MdEmail size={20} />
+                <div>{data?.user.email}</div>
+              </div>
+            </div>
+            <div className="flex w-full flex-col border-gray-800 md:border-r lg:border-none p-3">
+              <div className="flex flex-row items-center gap-2">
+                <MdEmail size={20} />
+                <div> Member since 24th October 2024</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

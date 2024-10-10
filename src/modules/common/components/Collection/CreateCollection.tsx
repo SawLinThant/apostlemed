@@ -22,9 +22,9 @@ const CreateCollection = () => {
     useForm<ICollectionProps>();
     const router=useRouter();
   return (
-    <div className="flex w-full flex-col items-center px-[20px]">
-      <div className="mt-[20px] flex w-full flex-col items-center border-[1px] border-black py-[20px] sm:w-[60vh]">
-        <span>Create New Collection</span>
+    <div className="flex w-full h-full justify-center flex-col items-center px-[20px]">
+      <div className="mt-[20px] flex w-full flex-col items-center border-[1px] rounded-md bg-white border-black py-[20px] sm:w-[60vh]">
+        <span className="pb-6 font-bold text-lg">Create New Collection</span>
         <form className="flex w-full flex-col gap-y-2 px-[30px]">
           <Input
             label="Name"
@@ -44,7 +44,7 @@ const CreateCollection = () => {
           />
           <div className="mt-[20px] flex w-full flex-col items-center gap-y-2">
             <button
-              className="flex w-full items-center justify-center border-2 p-[10px] sm:w-[200px]"
+              className="flex w-full rounded-md bg-theme hover:bg-primary text-white items-center justify-center border-2 p-[10px] sm:w-[200px]"
               type="submit"
             >
               Create

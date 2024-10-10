@@ -45,7 +45,7 @@ export const memberRoutes:Array<RouteConfig> = [
         label: "Collection",
         withLocale: true,
         icon: <Wallet size="20px" />,
-        path: "/app/collection",
+        path: "/app/collection/list",
       },
 ]
 

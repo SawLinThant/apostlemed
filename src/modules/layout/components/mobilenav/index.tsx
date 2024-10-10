@@ -19,7 +19,7 @@ const MobileNav = () => {
       </button>
       <div
         className={clsx(
-          "absolute right-0 top-[-1.5rem] z-10 flex h-screen w-screen flex-col gap-4 border-r bg-white p-4 transition-all duration-500",
+          "absolute right-0 top-[-1.5rem] z-20 flex h-screen w-screen flex-col gap-4 border-r bg-white p-4 transition-all duration-500",
           {
             "translate-x-[-200%]": !isOpen,
             "translate-x-[5%] md:translate-x-[3%]": isOpen,
