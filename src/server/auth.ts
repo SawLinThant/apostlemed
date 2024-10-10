@@ -19,16 +19,23 @@ import { signInSchema } from "./domain/auth";
  *
  * @see https://next-auth.js.org/getting-started/typescript#module-augmentation
  */
+
+interface ISessionUser{
+  phone:string
+}
 declare module "next-auth" {
   interface Session extends DefaultSession {
     user: {
       id: string;
       userType: string;
+      phone:string;
       // ...other properties
       // role: UserRole;
     } & DefaultSession["user"];
   }
 }
+
+
 
 const credentialsProvider = CredentialsProvider({
   // The name to display on the sign in form (e.g. "Sign in with...")
@@ -43,7 +50,8 @@ const credentialsProvider = CredentialsProvider({
           name: true,
           password: true,
           userType: true,
-          email:true
+          email:true,
+          phone:true
         },
       });
 
@@ -125,7 +133,7 @@ export const authOptions: NextAuthOptions = {
   //   signIn: "/login"
   // },
   callbacks: {
-    jwt: async ({ token, user }) => {
+    jwt: async ({ token, user }:any) => {
       user && (token.user = user);
       return token;
     },

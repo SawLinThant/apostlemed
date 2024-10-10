@@ -2,11 +2,15 @@ import { type Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
-  content: ["./src/**/*.tsx"],
+    darkMode: ["class"],
+    content: ["./src/**/*.tsx"],
   theme: {
     extend: {
       colors:{
-        primary: "#7a14f4",
+        theme:"#c89116",
+        primary: "#DAA520",
+        secondary: "#ffde59",
+        texttheme:"#2c2c2c"
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
@@ -22,5 +26,5 @@ export default {
       }
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 } satisfies Config;

@@ -119,7 +119,7 @@ const Register = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="rounded border-2 border-gray-500 bg-primary py-3 text-white flex flex-row items-center justify-center"
+                className="rounded border bg-theme py-3 text-white flex flex-row items-center justify-center"
               >
               {registerMutation.isPending?<LoadingIcon size={20}/>:"Register"}  
               </button>
