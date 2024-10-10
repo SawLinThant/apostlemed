@@ -8,11 +8,11 @@ const LoginTemplate = () => {
     const {loginView,member,reterivingMember} = useAccount();
     const [currentView,_] = loginView;
     const router = useRouter();
-    useEffect(() => {
-        if(!reterivingMember && member){
-            router.push("")
-        }
-    },[member,reterivingMember,router]);
+    // useEffect(() => {
+    //     if(!reterivingMember && member){
+    //         router.push("")
+    //     }
+    // },[member,reterivingMember,router]);
     return(
         <div className="flex min-h-screen w-full h-full items-center justify-center">
             {currentView === "sign-in"? <Login/> : <Register/>}
