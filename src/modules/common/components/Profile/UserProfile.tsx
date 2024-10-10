@@ -20,10 +20,10 @@ const UserProfile = () => {
     <div className="flex w-full flex-col items-center rounded-t">
       <div className="flex w-full flex-col items-center rounded-t">
         <div className="relative h-[8rem] w-full rounded-t-md border-b bg-gray-800">
-          <div className="absolute bottom-[-1px] right-[1.5rem] lg:right-[5.5rem] z-0 h-[60px] w-[120px] translate-y-[3.7rem] rotate-[-180deg] transform rounded-t-full border-l border-r border-t border-gray-800 bg-gray-700"></div>
+          <div className="absolute bottom-[-1px] right-[1.5rem] lg:right-[5.5rem] z-0 h-[60px] w-[120px] translate-y-[3.7rem] rotate-[-180deg] transform rounded-t-full border-l border-r border-t border-gray-800 bg-gray-800"></div>
         </div>
         <div className="flex w-full flex-row items-center lg:justify-end justify-between">
-          <div className="lg:mr-8 mt-2 flex h-full lg:flex-row flex-col ml-4 items-start gap-1 lg:gap-4">
+          <div className="lg:mr-8 mt-2 flex h-full lg:flex-row flex-col ml-4 md:ml-12 items-start gap-1 lg:gap-4">
             <div className="flex flex-row items-center gap-2">
               <p className="text-lg font-bold">1.2k</p>
               <span className="text-gray-500">Followers</span>
@@ -39,7 +39,7 @@ const UserProfile = () => {
             </span>
           </div>
         </div>
-        <div className="flex w-full flex-col gap-4 md:px[4rem] px-2 lg:px-[5rem]">
+        <div className="flex w-full flex-col gap-4 md:px[4rem] px-4 md:px-10 lg:px-[5rem]">
           <h2 className="w-full translate-y-[-1.5rem] text-right text-xl font-extrabold">
             {data?.user.name}
           </h2>
@@ -49,14 +49,14 @@ const UserProfile = () => {
             corrupti distinctio cum reprehenderit officia molestiae beatae. Odio
             earum ut itaque.
           </p>
-          <div className="flex w-full flex-row items-center justify-start gap-4">
-            <div className="flex flex-row items-center gap-1 cursor-pointer hover:underline text-blue-500">
+          <div className="flex w-full md:flex-row flex-col lg:flex-row md:items-center items-end lg:items-center justify-start gap-4">
+            <div className="flex flex-row items-start lg:items-center gap-1 cursor-pointer hover:underline text-blue-500">
               <FaEdit />
               <div>Edit Your Profile</div>
             </div>
             <div
              onClick={() => router.push("/app/profile/additional-data")}
-            className="flex flex-row items-center gap-1 text-blue-500 cursor-pointer hover:underline">
+            className="flex flex-row items-start lg:items-center gap-1 text-blue-500 cursor-pointer hover:underline">
               <MdOutlineIncompleteCircle />
               <div>Complete Your Profile</div>
             </div>
