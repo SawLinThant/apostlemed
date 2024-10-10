@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { memberRoutes, opsRoutes } from "~/lib/config";
