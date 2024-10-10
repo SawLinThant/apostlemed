@@ -31,7 +31,7 @@ const ProfileDropdown: React.FC = () => {
             </div>
             <div onClick={handleLogout} className="flex h-full cursor-pointer w-full flex-row items-center gap-3">
               <Signout color="black" />
-              <div>SignOut</div>
+              <div onClick={()=>handleLogout()}>SignOut</div>
             </div>
           </div>
         </div>
