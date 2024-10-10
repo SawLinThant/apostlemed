@@ -64,13 +64,14 @@ const MobileNav = () => {
         </div>
         <div className="h-full w-full rounded-md p-8 text-lg font-bold text-texttheme">
           <div className="flex h-full w-full flex-col gap-4 rounded-md">
-            {routes.map((route) => (
+            {routes.map((route, index) => (
               <div
                 onClick={() => {
                   router.push(`${route.path}`);
                   setIsOpen(false);
                 }}
                 className="group flex flex-col items-center gap-4"
+                key={index + route.id}
               >
                 <div
                   className={clsx(

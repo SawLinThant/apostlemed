@@ -64,7 +64,7 @@ const credentialsProvider = CredentialsProvider({
         return null;
       }
       const { password, ...data } = user;
-      //console.log(user)
+      console.log("login success**********************************************************")
       return data;
     } catch (e) {
       return null;
@@ -115,7 +115,7 @@ export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
   },
-  secret: process.env.AUTH_SECRET,
+  // secret: process.env.AUTH_SECRET,
   adapter: PrismaAdapter(prisma) as Adapter,
   providers: [
     credentialsProvider,
