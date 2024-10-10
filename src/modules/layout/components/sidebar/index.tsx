@@ -13,7 +13,7 @@ const Sidebar:React.FC = () => {
     const router=useRouter();
     return(
         <div className={clsx(" md:hidden max-h-screen h-screen border-r transition-all text-white duration-200 hidden bg-gray-800 lg:flex lg:flex-col gap-4 lg:items-center p-4",{
-            "lg:w-[15vw]":!collapse,
+            "lg:w-[20vw]":!collapse,
             "lg:w-[7vw]":collapse
         })}>
             <div className={clsx("w-full h-12 flex flex-row",{
@@ -41,7 +41,7 @@ const Sidebar:React.FC = () => {
             <div className={("w-full h-full mt-2")}>
                 {routes.map((route) =>(
                     <div className="group hover:cursor-pointer flex flex-col items-center gap-4" onClick={()=>{router.push(route.path)}}>
-                    <div className={clsx("w-full min-h-6 flex flex-row items-center p-2 gap-2 rounded  group-hover:bg-primary group-hover:text-white",{
+                    <div className={clsx("w-full min-h-6 flex flex-row items-center p-2 gap-2 rounded  group-hover:bg-theme group-hover:text-white",{
                         "justify-start":!collapse,
                         "justify-center":collapse
                     })} key={route.id}>

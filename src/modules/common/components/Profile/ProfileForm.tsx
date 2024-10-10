@@ -54,7 +54,7 @@ const ProfileForm = () => {
   };
   return (
     <div className="flex w-full flex-col items-center sm:p-[50px] p-[30px]">
-      <span>Additonal Data</span>
+      <span className="font-bold text-lg">Additonal Data</span>
       <form
         onSubmit={submit}
         className="mt-[20px] flex w-full flex-col items-center gap-y-5"
@@ -142,7 +142,7 @@ const ProfileForm = () => {
                 <SelectValue placeholder="Morale" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="Low">Low</SelectItem>
+                <SelectItem className="primary" value="Low">Low</SelectItem>
                 <SelectItem value="Normal">Normal</SelectItem>
                 <SelectItem value="High">High</SelectItem>
               </SelectContent>
@@ -152,7 +152,7 @@ const ProfileForm = () => {
         <div className="flex flex-col items-center">
           <button
             type="submit"
-            className="w-[200px] rounded-[5px] border-[1px] bg-blue-400 p-[10px] text-white"
+            className="w-[200px] rounded-[5px] border-[1px] bg-theme hover:bg-primary p-[10px] text-white"
           >
             Submit
           </button>
