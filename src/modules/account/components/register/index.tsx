@@ -39,7 +39,9 @@ const Register = () => {
       reset();
     },
     onError: () => {
-      toast.error("Failed to register");
+      toast.error("Failed to register",{
+        position:"top-center"
+      });
     },
   });
 
