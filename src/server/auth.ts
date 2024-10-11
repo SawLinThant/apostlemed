@@ -115,7 +115,7 @@ export const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
   },
-  // secret: process.env.AUTH_SECRET,
+  secret: process.env.AUTH_SECRET,
   adapter: PrismaAdapter(prisma) as Adapter,
   providers: [
     credentialsProvider,
@@ -129,11 +129,11 @@ export const authOptions: NextAuthOptions = {
      * @see https://next-auth.js.org/providers/github
      */
   ],
-  // pages:{
-  //   signIn: "/login"
-  // },
+  pages:{
+    signIn: "/login"
+  },
   callbacks: {
-    jwt: async ({ token, user }:any) => {
+    jwt: async ({ token, user }) => {
       user && (token.user = user);
       return token;
     },
