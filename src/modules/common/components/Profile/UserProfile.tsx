@@ -84,7 +84,7 @@ const UserProfile = () => {
                 <div>{data?.user.email}</div>
               </div>
             </div>
-            <div className="flex w-full flex-col border-gray-800 md:border-r lg:border-none p-3">
+            <div className="flex w-full flex-col p-3">
               <div className="flex flex-row items-center gap-2">
                 <MdEmail size={20} />
                 <div> Member since 24th October 2024</div>

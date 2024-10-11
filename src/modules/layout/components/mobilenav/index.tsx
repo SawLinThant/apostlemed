@@ -8,11 +8,13 @@ import Profile from "~/modules/common/icons/profile";
 import Signout from "~/modules/common/icons/sign-out";
 import { IoCloseSharp } from "react-icons/io5";
 import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const { member: userdata, handleLogout } = useAccount();
   const router = useRouter();
+  const session = useSession();
   const routes = userdata?.userType === "Ops" ? opsRoutes : memberRoutes;
   return (
     <div className="relative min-h-10 min-w-10">
@@ -41,15 +43,20 @@ const MobileNav = () => {
             <div className="flex h-32 w-32 items-center justify-center rounded-full border bg-theme p-3 text-white">
               <h2 className="text-3xl font-extrabold">J</h2>
             </div>
-            <div className="font-bold">user@gmailcom</div>
+            <div className="font-bold">{session.data?.user?.email}</div>
             <div className="flex flex-row items-center gap-3 font-bold">
               <div>Role</div>
               <span>-</span>
-              <div>Admin</div>
+              <div>{session.data?.user?.userType === "Ops"?"Admin":"Member"}</div>
             </div>
           </div>
           <div className="flex w-full flex-col justify-center gap-3 rounded-md bg-theme p-4 text-white">
-            <div className="flex h-full w-full cursor-pointer flex-row items-center gap-3">
+            <div 
+             onClick={() => {
+              router.push('profile');
+              setIsOpen(false);
+            }}
+            className="flex h-full w-full cursor-pointer flex-row items-center gap-3">
               <Profile color="white" />
               <div>Profile Detail</div>
             </div>
