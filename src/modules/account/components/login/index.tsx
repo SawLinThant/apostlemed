@@ -31,7 +31,7 @@ const Login = () => {
       redirect: false,
     });
     console.log(res);
-    if (res?.status === 401) {
+    if (res?.status !== 200) {
       handleError(new Error("Invalid phone no or password"));
       toast.error(authError, {
         position: "top-center",

@@ -129,11 +129,11 @@ export const authOptions: NextAuthOptions = {
      * @see https://next-auth.js.org/providers/github
      */
   ],
-  // pages:{
-  //   signIn: "/login"
-  // },
+  pages:{
+    signIn: "/login"
+  },
   callbacks: {
-    jwt: async ({ token, user }:any) => {
+    jwt: async ({ token, user }) => {
       user && (token.user = user);
       return token;
     },
