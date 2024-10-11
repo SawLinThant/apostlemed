@@ -63,7 +63,7 @@ const UserProfile = () => {
               <div>Complete Your Profile</div>
             </div>
           </div>
-          <div className="grid w-full rounded-xl bg-gray-200 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
+          <div className="grid w-full h-full rounded-xl bg-gray-200 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
             <div className="flex w-full flex-col gap-8 lg:border-r border-gray-800 p-3">
               <div className="flex flex-row items-center gap-2">
                 <MdEmail size={20} />
