@@ -53,7 +53,7 @@ const MobileNav = () => {
           <div className="flex w-full flex-col justify-center gap-3 rounded-md bg-theme p-4 text-white">
             <div 
              onClick={() => {
-              router.push('profile');
+              router.push('/app/profile');
               setIsOpen(false);
             }}
             className="flex h-full w-full cursor-pointer flex-row items-center gap-3">
