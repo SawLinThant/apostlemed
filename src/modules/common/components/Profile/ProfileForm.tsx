@@ -107,21 +107,21 @@ const ProfileForm = () => {
           </div>
           <div className="flex w-full flex-col gap-x-2 gap-y-2 sm:w-[400px]">
             <Input
-              label="Personal Medical Education Level(0 to 100)"
+              label="Personal Medical Education Level"
               type="number"
               {...register("personalMedicalEducationLevel", {
                 required: "personalMedicalEducationLeve required",
               })}
             />
             <Input
-              label="Ethical Level(0 to 100)"
+              label="Ethical Level"
               type="number"
               {...register("ethicalLevel", {
                 required: "ethicalLevel required",
               })}
             />
             <Input
-              label="Clinical Knowledge and Skills Level(0 to 100)"
+              label="Clinical Knowledge and Skills Level"
               type="number"
               {...register("clinicalKnowledgeAndSkill", {
                 required: "clinicalKnowledgeAndSkill required",
